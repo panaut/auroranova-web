@@ -1,0 +1,106 @@
+.cta-section {
+  background: transparent;
+}
+
+.cta-card {
+  position: relative;
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  padding: var(--space-2xl);
+}
+
+/* Animated aurora border glow */
+.cta-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    var(--c-violet),
+    var(--c-cyan),
+    var(--c-peach),
+    var(--c-amber),
+    var(--c-violet)
+  );
+  z-index: -1;
+  animation: cta-spin 6s linear infinite;
+  opacity: 0.45;
+}
+
+.cta-card::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: var(--card-bg);
+  border-radius: calc(var(--radius) - 2px);
+  z-index: 0;
+}
+
+.cta-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes cta-spin {
+  to { transform: rotate(360deg); }
+}
+
+.cta-title {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  margin: 0.5rem 0 1rem;
+}
+
+.cta-body {
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.cta-form {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 460px;
+  margin: 0 auto 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-input {
+  flex: 1;
+  min-width: 240px;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cta-input::placeholder {
+  color: var(--text-muted);
+}
+
+.cta-input:focus {
+  border-color: var(--c-cyan);
+  box-shadow: 0 0 0 3px rgba(29, 217, 255, 0.15);
+}
+
+.cta-confirm {
+  font-size: 1.05rem;
+  color: var(--c-cyan);
+  font-weight: 500;
+  padding: 1rem 0;
+}
+
+.cta-proof {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0;
+}

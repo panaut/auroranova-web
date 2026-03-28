@@ -1,0 +1,182 @@
+/* ============================================================
+   Aurora Nova — Design Tokens & Global Styles
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  /* Aurora gradient stops */
+  --c-midnight:  #0A0E27;
+  --c-navy:      #1A1A3E;
+  --c-purple:    #2D1B4E;
+  --c-violet:    #4A1B5F;
+  --c-magenta:   #6B2E7E;
+  --c-soft-mag:  #9B4D87;
+  --c-peach:     #D4956F;
+  --c-amber:     #FFA500;
+  --c-sky:       #87CEEB;
+
+  /* Accent */
+  --c-cyan:      #1DD9FF;
+  --c-teal:      #0F5F6F;
+  --c-white:     #F5F5F5;
+  --c-gray:      #A8B8C8;
+  --c-gray-dk:   #7A8A9A;
+
+  /* Semantic */
+  --bg:          var(--c-midnight);
+  --text-p:      var(--c-white);
+  --text-s:      var(--c-gray);
+  --card-bg:     rgba(15, 95, 111, 0.10);
+  --card-border: rgba(29, 217, 255, 0.20);
+  --glow:        rgba(29, 217, 255, 0.35);
+
+  /* Fonts */
+  --font:        'Inter', system-ui, sans-serif;
+  --font-mono:   'JetBrains Mono', monospace;
+
+  /* Easing */
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:    cubic-bezier(0.33, 0.66, 0.66, 1);
+
+  /* Spacing */
+  --section-py: 6rem;
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-p);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { min-height: 100vh; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Utilities ──────────────────────────────────────────── */
+.container {
+  width: min(1280px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--section-py) 0;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-cyan);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  color: var(--c-white);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-s);
+  line-height: 1.72;
+  max-width: 52ch;
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, var(--c-cyan) 20%, #c084fc 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Cards ──────────────────────────────────────────────── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  transition:
+    transform 0.3s var(--ease-out),
+    box-shadow 0.3s var(--ease-out),
+    border-color 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(29, 217, 255, 0.55);
+  box-shadow: 0 24px 60px rgba(29, 217, 255, 0.10);
+}
+
+/* ── Buttons ────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.7rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: var(--font);
+  color: #05111e;
+  background: linear-gradient(120deg, var(--c-cyan), #c084fc);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 12px 32px rgba(29, 217, 255, 0.28);
+  transition: transform 0.2s var(--ease-bounce), box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 18px 44px rgba(29, 217, 255, 0.38);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.7rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: var(--font);
+  color: var(--c-cyan);
+  background: transparent;
+  border: 1px solid rgba(29, 217, 255, 0.5);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s var(--ease-bounce);
+}
+
+.btn-secondary:hover {
+  background: rgba(29, 217, 255, 0.08);
+  border-color: var(--c-cyan);
+  transform: translateY(-2px);
+}
+
+/* ── Divider ────────────────────────────────────────────── */
+.divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--card-border), transparent);
+  margin: 0;
+}

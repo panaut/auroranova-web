@@ -1,0 +1,50 @@
+.techstack {
+  background: linear-gradient(180deg, #0a0e27 0%, #0c1020 100%);
+}
+
+.techstack-head {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.tech-card {
+  padding: 1.4rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.tc-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.tc-name {
+  font-weight: 700;
+  color: var(--c-white);
+  font-size: 0.97rem;
+  flex: 1;
+}
+
+.tc-desc {
+  font-size: 0.82rem;
+  color: var(--text-s);
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .tech-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .tech-grid { grid-template-columns: 1fr; }
+}
