@@ -1,3 +1,5 @@
+import './Footer.css'
+
 const LINKS = [
   { label: 'Features', href: '#features' },
   { label: 'Showcase', href: '#showcase' },
@@ -50,7 +52,7 @@ export default function Footer() {
           </a>
           <p className="footer-tagline">The New Dawn</p>
           <p className="footer-desc">
-            Where clarity emerges from darkness. Built for the next generation of creators.
+            Where clarity emerges from complexity. Built for the next generation of creators.
           </p>
         </div>
 

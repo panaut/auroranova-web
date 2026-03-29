@@ -22,7 +22,7 @@ export default function Hero() {
           Where clarity{' '}
           <span className="gradient-text">emerges</span>
           <br />
-          from darkness
+          from complexity
         </motion.h1>
 
         <motion.p className="hero-body" {...fadeUp(0.4)}>

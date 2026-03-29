@@ -1,6 +1,6 @@
 .footer {
   background: #050814;
-  padding: var(--space-2xl) 0 var(--space-lg);
+  padding: var(--space-2xl) 0 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
@@ -113,11 +113,23 @@
 .footer-copy {
   color: rgba(255, 255, 255, 0.25);
   font-size: 0.8rem;
-  margin: 0;
+  margin: 1rem 0 0;
   text-align: center;
 }
 
 /* Responsive */
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+    column-gap: 6rem;
+    padding-inline: 3rem;
+  }
+
+  .footer-bottom {
+    padding-inline: 3rem;
+  }
+}
+
 @media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
