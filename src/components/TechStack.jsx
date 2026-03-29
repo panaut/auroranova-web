@@ -2,18 +2,18 @@ import { motion } from 'framer-motion'
 import './TechStack.css'
 
 const tech = [
+  { name: 'LangGraph',   color: '#F97316', desc: 'LLM orchestration' },
+  { name: 'Python',      color: '#3776AB', desc: 'ML & AI backend' },
+  { name: 'OpenAI',      color: '#74AA9C', desc: 'LLM integration' },
+  { name: 'Docker',      color: '#2496ED', desc: 'Containerisation' },
+  { name: 'PostgreSQL',  color: '#4169E1', desc: 'Data layer' },
+  { name: 'Vercel',      color: '#F5F5F5', desc: 'Edge deployment' },
   { name: 'React',       color: '#61DAFB', desc: 'UI components' },
   { name: 'Vite',        color: '#BD34FE', desc: 'Build tooling' },
   { name: 'TypeScript',  color: '#3178C6', desc: 'Type safety' },
   { name: 'Node.js',     color: '#68A063', desc: 'Server runtime' },
   { name: 'Framer',      color: '#FF0055', desc: 'Motion & animation' },
   { name: 'Tailwind',    color: '#38BDF8', desc: 'Utility CSS' },
-  { name: 'PostgreSQL',  color: '#4169E1', desc: 'Data layer' },
-  { name: 'Vercel',      color: '#F5F5F5', desc: 'Edge deployment' },
-  { name: 'Python',      color: '#3776AB', desc: 'ML & AI backend' },
-  { name: 'OpenAI',      color: '#74AA9C', desc: 'LLM integration' },
-  { name: 'LangGraph',   color: '#F97316', desc: 'LLM orchestration' },
-  { name: 'Docker',      color: '#2496ED', desc: 'Containerisation' },
 ]
 
 export default function TechStack() {
